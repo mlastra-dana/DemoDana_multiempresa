@@ -22,9 +22,10 @@ const industries: Array<{ key: Industry; label: string }> = [
   { key: "aseguradora", label: "Aseguradora" },
 ];
 
-const danaButtonPrimary = "rounded-pill border border-dana-primary bg-dana-primary text-white shadow-none hover:opacity-90";
-const danaButtonSecondary = "rounded-pill border border-dana-primary bg-dana-primary text-white shadow-none hover:opacity-90";
-const danaButtonDark = "rounded-pill border border-dana-primary bg-dana-primary text-white shadow-none hover:opacity-90";
+const danaButtonPrimary = "rounded-pill border border-[rgb(var(--dc-orange))] bg-[rgb(var(--dc-orange))] text-white shadow-none hover:opacity-90";
+const danaButtonSecondary = "rounded-pill border border-[rgb(var(--dc-orange))] bg-[rgb(var(--dc-orange))] text-white shadow-none hover:opacity-90";
+const danaButtonDark = "rounded-pill border border-[rgb(var(--dc-orange))] bg-[rgb(var(--dc-orange))] text-white shadow-none hover:opacity-90";
+const danaButtonOutline = "rounded-pill border border-[rgb(var(--dc-orange))] bg-white text-[rgb(var(--dc-orange))] shadow-none hover:bg-[rgb(var(--dc-orange))/0.05]";
 const danaField = "w-full rounded-md border border-[#cfd3d8] bg-white px-3 py-2 text-sm text-[#2d3138] outline-none focus:border-dana-primary focus:ring-2 focus:ring-dana-primary/20";
 const danaSelect = "w-full rounded-md border border-[#cfd3d8] bg-white px-3 py-2 text-sm text-[#2d3138] outline-none focus:border-dana-primary focus:ring-2 focus:ring-dana-primary/20";
 const danaPanel = "rounded-xl border border-[#d9dde2] bg-white shadow-none";
@@ -460,43 +461,76 @@ export function MultiIndustryLandingPage() {
   const [industry, setIndustry] = useState<Industry>("laboratorio");
 
   return (
-    <DanaLayout>
-      <section className="bg-dana-primary">
-        <div className="mx-auto max-w-7xl px-4 py-20 text-white">
-          <p className="text-sm font-semibold uppercase tracking-[0.18em] text-white/90">DANAconnect</p>
-          <h1 className="mt-3 text-4xl font-extrabold leading-tight md:text-6xl">Multiempresas de visual/descarga documentos</h1>
-          <p className="mt-4 max-w-2xl text-base text-white/90 md:text-lg">
+    <div className="min-h-screen bg-[#efefef] text-[#2d3138]">
+      <header className="border-b border-[#e5e7eb] bg-white">
+        <div className="mx-auto flex max-w-7xl items-center justify-end gap-6 px-4 py-2 text-xs text-[#6b7280]">
+          <a href="#" className="hover:text-[#374151]">Contacto</a>
+          <a href="#" className="hover:text-[#374151]">Aliados Comerciales</a>
+          <a href="#" className="hover:text-[#374151]">English</a>
+          <a href="#" className="hover:text-[#374151]">Login</a>
+        </div>
+      </header>
+
+      <header className="border-b border-[#e5e7eb] bg-white">
+        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-6 px-4 py-4">
+          <Link to="/multi" aria-label="Volver al inicio multiempresa">
+            <img src="/brand/logo-danaconnect-horizontal.png" alt="DANAconnect" className="h-14 w-auto object-contain" />
+          </Link>
+
+          <nav className="hidden items-center justify-center gap-8 text-[1.04rem] text-[#444b54] lg:flex">
+            <a href="#" className="hover:text-[#1f2937]">Plataforma</a>
+            <a href="#" className="hover:text-[#1f2937]">Casos de uso</a>
+            <a href="#" className="hover:text-[#1f2937]">Servicios</a>
+            <a href="#" className="hover:text-[#1f2937]">Recursos</a>
+            <a href="#" className="hover:text-[#1f2937]">La empresa</a>
+            <a href="#" className="hover:text-[#1f2937]">Precios</a>
+          </nav>
+
+          <div className="flex items-center gap-3 justify-self-end">
+            <Button className={danaButtonPrimary}>VIDEO TOUR</Button>
+            <Button className={danaButtonOutline}>SOLICITE UNA DEMO</Button>
+          </div>
+        </div>
+      </header>
+
+      <section style={{ backgroundColor: "rgb(var(--dc-orange))" }}>
+        <div className="mx-auto max-w-7xl px-4 py-20 text-white md:py-24">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white/90">DANAconnect</p>
+          <h1 className="mt-5 max-w-4xl text-5xl font-extrabold leading-tight md:text-7xl">
+            Multiempresas de visual/descarga documentos
+          </h1>
+          <p className="mt-6 max-w-3xl text-xl text-white/90">
             Selecciona tu industria y accede a tus documentos con una experiencia unificada.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-10">
-        <div className="grid gap-4 md:grid-cols-4">
+      <section className="mx-auto max-w-7xl px-4 py-10 md:py-12">
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
           {industries.map((item) => (
             <button
               key={item.key}
               type="button"
               onClick={() => setIndustry(item.key)}
-              className={`rounded-xl border p-5 text-left transition ${
+              className={`rounded-2xl border p-6 text-left transition ${
                 industry === item.key
-                  ? "border-dana-primary bg-[#fff3ef]"
-                  : "border-[#d9dde2] bg-white hover:border-dana-primary/70"
+                  ? "border-[rgb(var(--dc-orange))] bg-[#fff5ef] shadow-[0_1px_8px_rgba(0,0,0,0.06)]"
+                  : "border-[#d9dde2] bg-white hover:border-[rgb(var(--dc-orange))/0.7]"
               }`}
             >
-              <p className="text-sm uppercase tracking-wide text-[#6b7280]">Industria</p>
-              <p className="mt-1 text-xl font-bold">{item.label}</p>
+              <p className="text-sm uppercase tracking-[0.12em] text-[#6b7280]">Industria</p>
+              <p className="mt-2 text-[2rem] font-bold leading-none">{item.label}</p>
             </button>
           ))}
         </div>
 
-        <div className="mt-8 flex justify-end">
+        <div className="mt-8 flex justify-end md:mt-10">
           <Button className={danaButtonPrimary} onClick={() => navigate(`/access/${industry}`)}>
             Continuar
           </Button>
         </div>
       </section>
-    </DanaLayout>
+    </div>
   );
 }
 

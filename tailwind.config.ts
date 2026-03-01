@@ -6,7 +6,7 @@ const config: Config = {
     extend: {
       colors: {
         dana: {
-          primary: "#f68b2c",
+          primary: "var(--dc-orange-hex)",
         },
         brand: {
           bg: "rgb(var(--brand-bg) / <alpha-value>)",

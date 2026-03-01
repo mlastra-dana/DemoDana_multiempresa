@@ -1,4 +1,7 @@
 :root {
+  --dc-orange: 221 87 54;
+  --dc-orange-hex: #dd5736;
+
   --brand-bg: 255 255 255;
   --brand-text: 31 41 55;
   --brand-muted: 107 114 128;
