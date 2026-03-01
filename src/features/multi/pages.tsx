@@ -459,6 +459,8 @@ function IndustryDocumentsBoard({
 export function MultiIndustryLandingPage() {
   const navigate = useNavigate();
   const [industry, setIndustry] = useState<Industry>("laboratorio");
+  const danaSolidStyle = { backgroundColor: "rgb(var(--dc-orange))", borderColor: "rgb(var(--dc-orange))" };
+  const danaOutlineStyle = { color: "rgb(var(--dc-orange))", borderColor: "rgb(var(--dc-orange))", backgroundColor: "#ffffff" };
 
   return (
     <div className="min-h-screen bg-[#efefef] text-[#2d3138]">
@@ -487,8 +489,8 @@ export function MultiIndustryLandingPage() {
           </nav>
 
           <div className="flex items-center gap-3 justify-self-end">
-            <Button className={danaButtonPrimary}>VIDEO TOUR</Button>
-            <Button className={danaButtonOutline}>SOLICITE UNA DEMO</Button>
+            <Button className={danaButtonPrimary} style={danaSolidStyle}>VIDEO TOUR</Button>
+            <Button className={danaButtonOutline} style={danaOutlineStyle}>SOLICITE UNA DEMO</Button>
           </div>
         </div>
       </header>
@@ -525,7 +527,7 @@ export function MultiIndustryLandingPage() {
         </div>
 
         <div className="mt-8 flex justify-end md:mt-10">
-          <Button className={danaButtonPrimary} onClick={() => navigate(`/access/${industry}`)}>
+          <Button className={danaButtonPrimary} style={danaSolidStyle} onClick={() => navigate(`/access/${industry}`)}>
             Continuar
           </Button>
         </div>
