@@ -473,7 +473,7 @@ export function MultiIndustryLandingPage() {
       </header>
 
       <header className="border-b border-[#e5e7eb] bg-white">
-        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr_auto] items-center gap-6 px-4 py-4">
+        <div className="mx-auto grid max-w-7xl grid-cols-[auto_1fr] items-center gap-6 px-4 py-4">
           <Link to="/multi" aria-label="Volver al inicio multiempresa">
             <img src="/brand/logo-danaconnect-horizontal.png" alt="DANAconnect" className="h-14 w-auto object-contain" />
           </Link>
@@ -486,11 +486,6 @@ export function MultiIndustryLandingPage() {
             <a href="#" className="hover:text-[#1f2937]">La empresa</a>
             <a href="#" className="hover:text-[#1f2937]">Precios</a>
           </nav>
-
-          <div className="flex items-center gap-3 justify-self-end">
-            <Button className={danaButtonPrimary} style={danaSolidStyle}>VIDEO TOUR</Button>
-            <Button className={danaButtonOutline} style={danaSolidStyle}>SOLICITE UNA DEMO</Button>
-          </div>
         </div>
       </header>
 
