@@ -45,12 +45,6 @@ export function AccessPageTemplate({
           <Link to="/multi" aria-label="Volver al inicio multiempresa">
             <img src="/brand/logo-danaconnect-horizontal.png" alt="DanaConnect" className="h-10 w-auto max-w-[190px] object-contain sm:max-w-none" />
           </Link>
-          <nav className="hidden items-center gap-8 text-[1.04rem] text-[#444b54] lg:flex">
-            <a href="#" className="hover:text-[#1f2937]">Platform</a>
-            <a href="#" className="hover:text-[#1f2937]">Use Cases</a>
-            <a href="#" className="hover:text-[#1f2937]">Services</a>
-            <a href="#" className="hover:text-[#1f2937]">Resources</a>
-          </nav>
           <Button className={`w-full sm:w-auto ${danaButtonPrimary}`} style={danaSolidStyle} onClick={exitToSelector}>
             Salir
           </Button>

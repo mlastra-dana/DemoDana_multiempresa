@@ -16,12 +16,6 @@ export function PublicLayout({ children }: { children: ReactNode }) {
               className="h-8 w-auto max-w-[180px] object-contain sm:max-w-[220px]"
             />
           </div>
-          <nav className="hidden items-center gap-6 text-sm text-brand-muted md:flex">
-            <a href="#nosotros">Nosotros</a>
-            <a href="#servicios">Servicios</a>
-            <a href="#blog">Blog</a>
-            <a href="#contacto">Contacto</a>
-          </nav>
           <Button variant="ghost" className="w-full sm:w-auto" onClick={exitToSelector}>Salir</Button>
         </div>
       </header>

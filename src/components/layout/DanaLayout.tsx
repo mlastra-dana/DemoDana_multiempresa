@@ -22,12 +22,6 @@ export function DanaLayout({ children }: Props) {
           <Link to="/" aria-label="Volver al inicio multiempresa">
             <img src="/brand/logo-danaconnect-horizontal.png" alt="DANAconnect" className="h-10 w-auto max-w-[190px] object-contain sm:max-w-none" />
           </Link>
-          <div className="hidden items-center gap-6 text-sm text-[#5b6068] md:flex">
-            <span>Platform</span>
-            <span>Use Cases</span>
-            <span>Services</span>
-            <span>Resources</span>
-          </div>
           <div className="flex items-center gap-3">
             {showExit ? (
               <Button className={`w-full sm:w-auto ${danaButtonPrimary}`} style={danaSolidStyle} onClick={exitToSelector}>
